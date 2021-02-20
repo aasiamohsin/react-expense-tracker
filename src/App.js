@@ -1,25 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react'
+import { GlobalProvider } from './Context/GlobalContext'
+import { Header } from './Components/Header'
+import { Balance } from './Components/Balance'
+import { IncomeExpense } from './Components/IncomeExpense'
+import { TransactionHistory } from './Components/TransactionHistory'
+import { AddTransaction } from './Components/AddTransaction'
 
-function App() {
+export const App = () => {
+
+  const [ showAdd, setShowAdd ] = useState(false)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GlobalProvider>
+      <div className="container">
+        <Header title = 'Expense Tracker' onAdd = {() => setShowAdd(!showAdd)}  showAdd = {showAdd}/>
+        <Balance title = 'Balance'/>
+        <IncomeExpense/>
+        {showAdd && <TransactionHistory/>}
+        {showAdd && <AddTransaction/>}
+      </div>
+    </GlobalProvider>
   );
 }
-
-export default App;

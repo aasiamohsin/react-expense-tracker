@@ -1,13 +1,162 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  max-width: 500px;
+  margin: 30px auto;
+  overflow: auto;
+  min-height: 300px;
+  border: 3px solid rgb(7, 7, 7);
+  padding: 30px;
+  border-radius: 15px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+  margin: 0;
+}
+
+.balance {
+  background: rgb(27, 26, 26);
+  color: silver;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+  padding: 15px;
+  border-radius: 20px;
+  border: 3px solid silver;
+}
+
+.balance p {
+  color: blue;
+  font-size: 32px;
+}
+
+.income-expense {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 20px;
+  border: 3px solid silver;
+  margin: 20px 5px;
+  padding: 15px 0;
+}
+
+.income-expense > div {
+  flex: 1;
+  text-align: center;
+}
+
+.income-expense > div:first-of-type {
+  border-right: 2px solid silver;
+}
+
+.income p {
+  color: blue;
+}
+
+.expense p {
+  color: red;
+}
+
+.transactions {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid silver;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 10px 15px;
+}
+
+.transactions.plus {
+  border-right: 7px solid blue;
+}
+
+.transactions.minus {
+  border-right: 7px solid red;
+}
+
+.his-title {
+  text-align: center;
+}
+
+.delete {
+  position: absolute;
+  color: red;
+  top: 15px;
+  right: 430px;
+  opacity: 0;
+}
+
+.delete:hover {
+  opacity: 1;
+}
+
+.add-form {
+  margin: 10px 10px;
+}
+
+.add-form h3 {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.form-control {
+  margin: 10px 0;
+}
+
+.form-control label {
+  display: block;
+  font-weight: bold;
+}
+
+.form-control input {
+  width: 100%;
+  height: 40px;
+  margin: 3px 0;
+  padding: 3px 7px;
+  font-size: 17px;
 }
